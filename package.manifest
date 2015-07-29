@@ -1,0 +1,22 @@
+{   
+	gridEditors: [      
+		{
+			alias: "CodeEditor",
+			name: "Code editor",
+			view: "~/App_Plugins/GridCodeEditor/codeeditor.html",
+			icon: "icon-code",
+			config: {
+				language: "javascript"
+			}
+		} 
+	],
+	javascript: [
+		'~/App_Plugins/GridCodeEditor/codeeditor.controller.js',
+		'~/umbraco_client/CodeMirror/Js/Lib/codemirror.js',
+		'~/App_Plugins/GridCodeEditor/modeselect.directive.js',
+		'~/App_Plugins/GridCodeEditor/codeeditor.directive.js'
+	],
+	css: [  
+		'~/umbraco_client/CodeMirror/Js/Lib/codemirror.css'
+	]
+}

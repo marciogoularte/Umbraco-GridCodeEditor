@@ -1,0 +1,25 @@
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<dynamic>
+@{
+	var id = Guid.NewGuid().ToString();
+    var language = Model.config.language;
+}
+<textarea id="@id" name="code" class="code-preview">@Model.value</textarea>
+<script src="/umbraco_client/CodeMirror/Js/Lib/codemirror.js"></script>
+<script src="/umbraco_client/CodeMirror/Js/Mode/@(language)/@(language).js"></script>
+<link rel="stylesheet" type="text/css" href="/umbraco_client/CodeMirror/Js/Lib/codemirror.css"></link>
+<style type="text/css">
+    .CodeMirror {
+        height: 100%;
+    }
+</style>
+
+
+
+<script>
+	CodeMirror.fromTextArea(document.getElementById('@id'), {
+			mode: "@Model.config.language",
+			lineNumbers: true,
+			viewportMargin: Infinity,
+			readOnly: true
+		});
+</script>
